@@ -1,0 +1,16 @@
+[Unit]
+Description=Airflow webserver daemon
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+User=azureuser
+Group=azureuser
+Type=simple
+ExecStart=/home/azureuser/airflow/start_airflow.sh
+Restart=on-failure
+RestartSec=5s
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

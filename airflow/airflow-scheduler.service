@@ -1,0 +1,15 @@
+[Unit]
+Description=Airflow scheduler daemon
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+User=azureuser
+Group=azureuser
+Type=simple
+ExecStart=/home/azureuser/airflow/start_scheduler.sh
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

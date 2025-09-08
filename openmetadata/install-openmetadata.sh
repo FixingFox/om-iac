@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install PostgreSQL
 
 if command -v psql &> /dev/null; then
@@ -25,4 +27,14 @@ mkdir downloads
 wget "https://github.com/open-metadata/OpenMetadata/releases/download/1.9.1-release/openmetadata-1.9.1.tar.gz" -P downloads
 mkdir openmetadata
 tar -zxvf downloads/openmetadata-*.tar.gz -C openmetadata
+
+sudo wget "https://raw.githubusercontent.com/FixingFox/om-iac/refs/heads/main/openmetadata/openmetadata.service" -P /etc/systemd/system
+sudo systemctl daemon-reload
+
+echo "OpenMetadata installation complete."
+echo "Remember to configure OpenMetadata by editing the configuration file located at: openmetadata-*/conf/openmetadata.yaml"
+echo "Ensure that the database and elasticsearch settings are correctly set in the configuration file."
+echo "Once configured, you can migrate the database schema with: ./bootstrap/openmetadata-ops.sh drop-create"
+echo "You can start OpenMetadata with: sudo systemctl start openmetadata.service"
+echo "You can check the status of OpenMetadata with: sudo systemctl status openmetadata.service"
 

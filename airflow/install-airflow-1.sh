@@ -32,20 +32,6 @@ export AIRFLOW_HOME=/home/azureuser/airflow
 touch $HOME/airflow/airflow.cfg
 airflow config list --defaults > $HOME/airflow/airflow.cfg
 
-# Update the sql_alchemy_conn line in airflow.cfg
-
-#airflow db migrate
-#pip install openmetadata-ingestion[all]==1.9.1
-#pip install openmetadata-managed-apis==1.9.1
-#
-#airflow users create \
-#    --username airflow_admin \
-#    --firstname Gaute \
-#    --lastname Tetlie \
-#    --role Admin \
-#    --email Gaute.tetlie@bouvet.no
-#
-#sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/FixingFox/om-iac/refs/heads/main/airflow/airflow-scheduler.service
-#sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/FixingFox/om-iac/refs/heads/main/airflow/airflow-webserver.service
-#
-#sudo systemctl daemon-reload
+echo "Airflow installed successfully"
+echo "Remember to configure the airflow.cfg file with the correct database connection string. before continuing."
+echo "Once complete, run the install-openmetadata-2.sh script to finish the setup."

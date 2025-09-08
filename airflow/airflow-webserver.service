@@ -4,10 +4,10 @@ After=network.target postgresql.service
 Wants=postgresql.service
 
 [Service]
-User=azureuser
-Group=azureuser
+User=omadmin
+Group=omadmin
 Type=simple
-ExecStart=/home/azureuser/airflow/start_airflow.sh
+ExecStart=/home/omadmin/airflow/start_airflow.sh
 Restart=on-failure
 RestartSec=5s
 PrivateTmp=true

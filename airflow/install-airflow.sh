@@ -12,7 +12,7 @@ else
 fi
 
 # create conda environment
-mkdir /home/auzreuser/airflow_env && cd $_
+mkdir $HOME/airflow_env && cd $_
 $HOME/miniconda3/bin/conda create -n airflow_env python=3.11 -y
 $HOME/miniconda3/bin/conda init
 exec bash --login

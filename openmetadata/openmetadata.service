@@ -4,12 +4,12 @@ After=network.target postgresql.service elasticsearch.service airflow-webserver.
 Wants=postgresql.service elasticsearch.service airflow-webserver.service
 
 [Service]
-User=azureuser
-Group=azureuser
+User=omadmin
+Group=omadmin
 Type=forking
-WorkingDirectory=/home/azureuser/openmetadata/openmetadata-1.9.1/
-ExecStart=/home/azureuser/openmetadata/openmetadata-1.9.1/bin/openmetadata.sh start
-#ExecStop=/home/azureuser/openmetadata/openmetadata-1.9.1/bin/openmetadata.sh stop
+WorkingDirectory=/home/omadmin/openmetadata/openmetadata-1.9.1/
+ExecStart=/home/omadmin/openmetadata/openmetadata-1.9.1/bin/openmetadata.sh start
+#ExecStop=/home/omadmin/openmetadata/openmetadata-1.9.1/bin/openmetadata.sh stop
 Restart=on-failure
 RestartSec=5s
 PrivateTmp=true

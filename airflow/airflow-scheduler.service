@@ -4,10 +4,10 @@ After=network.target postgresql.service
 Wants=postgresql.service
 
 [Service]
-User=azureuser
-Group=azureuser
+User=omadmin
+Group=omadmin
 Type=simple
-ExecStart=/home/azureuser/airflow/start_scheduler.sh
+ExecStart=/home/omadmin/airflow/start_scheduler.sh
 Restart=always
 RestartSec=5s
 
